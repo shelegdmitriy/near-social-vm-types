@@ -207,3 +207,21 @@ declare namespace StorageAPI {
     privateSet(key: string, value: string): Promise<void>;
   }
 }
+
+declare function useState<S = undefined>(): [
+  S | undefined,
+  (value: S | undefined | ((prevState: S | undefined) => S | undefined)) => void
+];
+declare function useState<S>(
+  initialState: S | (() => S)
+): [S, (value: S | ((prevState: S) => S)) => void];
+
+declare function useEffect(
+  effect: () => void | (() => void),
+  deps?: ReadonlyArray<unknown>
+): void;
+
+declare function useMemo<T>(
+  factory: () => T,
+  deps: ReadonlyArray<unknown> | undefined
+): T;
