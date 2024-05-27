@@ -25,7 +25,9 @@ jobs:
     - name: Configure npm authentication
       run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
 
-    - name: Publish to npm
-      run: npm publish
+    - name: Bump version and publish to npm
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      run: |
+        npm version patch
+        npm publish
