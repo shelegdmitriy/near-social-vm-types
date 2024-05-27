@@ -22,6 +22,11 @@ jobs:
     - name: Install dependencies
       run: npm install
 
+    - name: Set Git config
+      run: |
+        git config --global user.email "sheleg.dmitriy@gmail.com"
+        git config --global user.name "Dmitriy"
+
     - name: Bump version and publish to npm
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
