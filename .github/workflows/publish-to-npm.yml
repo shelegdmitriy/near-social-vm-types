@@ -33,6 +33,7 @@ jobs:
     - name: Bump version and publish to npm
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        GH_PAT: ${{ secrets.GH_PAT }}
       run: |
         git remote set-url origin https://x-access-token:${{ secrets.GH_PAT }}@github.com/shelegdmitriy/near-social-vm-types.git
         npm version patch
