@@ -15,7 +15,7 @@ npm install --save-dev near-social-vm-types
 Once you've installed the **near-social-vm-types** package, you can import the types in your TypeScript files:
 
 ```jsx
-import { State, Social, Near } from 'near-social-vm-types';
+import type { State, Social, Near } from 'near-social-vm-types';
 
 // Now you can use the imported types in your code
 // For example:
