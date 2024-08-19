@@ -33,4 +33,4 @@ jobs:
       run: |
         npm version patch
         git push origin main --follow-tags
-        npm publish
+        npm publish --provenance --access public
